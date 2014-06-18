@@ -1,4 +1,4 @@
-package cxfDemo.JAXWS_DEMO01.clien3;
+package cxfDemo.JAXWS_DEMO01.client3;
 
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
