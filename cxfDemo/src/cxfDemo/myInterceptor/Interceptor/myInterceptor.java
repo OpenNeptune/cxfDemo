@@ -1,7 +1,7 @@
 package cxfDemo.myInterceptor.Interceptor;
 /**
  * @summary:
- * 		ÀûÓÃ¸ÃÀ¹½ØÆ÷£¬ÔÚ½ÓÊÜWeb ServicesÇëÇóµ÷ÓÃÊ±Ğ£Ñé¿Í»§¶ËµÄÓÃ»§ĞèĞÅÏ¢
+ * 		åˆ©ç”¨è¯¥æ‹¦æˆªå™¨ï¼Œåœ¨æ¥å—Web Servicesè¯·æ±‚è°ƒç”¨æ—¶æ ¡éªŒå®¢æˆ·ç«¯çš„ç”¨æˆ·éœ€ä¿¡æ¯
  *
  */
 import javax.xml.namespace.QName;
@@ -19,13 +19,13 @@ public class myInterceptor extends AbstractPhaseInterceptor<SoapMessage> {
 	
 	
 	public myInterceptor(String username,String password) {
-		//Ö¸¶¨ÔÚµ÷ÓÃ·şÎñ¶ËµÄ·½·¨Ê±µ÷ÓÃ¸ÃÀ¹½ØÆ÷
+		//æŒ‡å®šåœ¨è°ƒç”¨æœåŠ¡ç«¯çš„æ–¹æ³•æ—¶è°ƒç”¨è¯¥æ‹¦æˆªå™¨
 		super(Phase.INVOKE);
 		this.username = username;
 		this.password = password;
 	}
 	/**
-	 * À¹½ØÆ÷Ğ£Ñé¿Í»§¶Ë·¢ËÍµ½¿Í»§¶Ë·¢ËÍµÄSOAPÖĞÊÇ·ñÓĞÈçÏÂµÄĞÅÏ¢
+	 * æ‹¦æˆªå™¨æ ¡éªŒå®¢æˆ·ç«¯å‘é€åˆ°å®¢æˆ·ç«¯å‘é€çš„SOAPä¸­æ˜¯å¦æœ‰å¦‚ä¸‹çš„ä¿¡æ¯
 	 * 
 	 * 		<envelope>
 	 * 			<head>
@@ -42,7 +42,7 @@ public class myInterceptor extends AbstractPhaseInterceptor<SoapMessage> {
 		String user="";
 		String pass="";
 		QName qName = new QName("user");
-		//ÅĞ¶Ï¿Í»§¶ËµÄSOAPÏûÏ¢Í·ÊÇ·ñÓĞuserÔªËØ
+		//åˆ¤æ–­å®¢æˆ·ç«¯çš„SOAPæ¶ˆæ¯å¤´æ˜¯å¦æœ‰userå…ƒç´ 
 		if(message.hasHeader(qName)){
 			Header header = message.getHeader(qName);
 			Element element = (Element) header.getObject();
@@ -54,16 +54,16 @@ public class myInterceptor extends AbstractPhaseInterceptor<SoapMessage> {
 			}
 			System.out.println("myInterceptor:=>"+user+"<>"+pass);
 			if(user.equals(username) && pass.equals(password)){
-				System.out.println("ÓÃ»§ĞÅÏ¢Ğ£Ñé³É¹¦:=>"+user+"<>"+pass);
+				System.out.println("ç”¨æˆ·ä¿¡æ¯æ ¡éªŒæˆåŠŸ:=>"+user+"<>"+pass);
 			}else{
-				System.out.println("ÓÃ»§ĞÅÏ¢Ğ£ÑéÊ§°Ü:=>"+user+"<>"+pass);
-				//´Ë´¦Å×³öÒ»¸öÒì³£¸ø¿Í»§¶Ëµ÷ÓÃ³ÌĞò£¬È»ºóÖÕÖ¹³ÌĞòµÄÖ´ĞĞ
-				throw new RuntimeException("ÓÃ»§ĞÅÏ¢Ğ£ÑéÊ§°Ü");
+				System.out.println("ç”¨æˆ·ä¿¡æ¯æ ¡éªŒå¤±è´¥:=>"+user+"<>"+pass);
+				//æ­¤å¤„æŠ›å‡ºä¸€ä¸ªå¼‚å¸¸ç»™å®¢æˆ·ç«¯è°ƒç”¨ç¨‹åºï¼Œç„¶åç»ˆæ­¢ç¨‹åºçš„æ‰§è¡Œ
+				throw new RuntimeException("ç”¨æˆ·ä¿¡æ¯æ ¡éªŒå¤±è´¥");
 			}
 		}else{
-			System.out.println("Î´ÊÚÈ¨ÓÃ»§²»ÔÊĞíµ÷ÓÃ");
-			//´Ë´¦Å×³öÒ»¸öÒì³£¸ø¿Í»§¶Ëµ÷ÓÃ³ÌĞò£¬È»ºóÖÕÖ¹³ÌĞòµÄÖ´ĞĞ
-			throw new RuntimeException("Î´ÊÚÈ¨ÓÃ»§²»ÔÊĞíµ÷ÓÃ");			
+			System.out.println("æœªæˆæƒç”¨æˆ·ä¸å…è®¸è°ƒç”¨");
+			//æ­¤å¤„æŠ›å‡ºä¸€ä¸ªå¼‚å¸¸ç»™å®¢æˆ·ç«¯è°ƒç”¨ç¨‹åºï¼Œç„¶åç»ˆæ­¢ç¨‹åºçš„æ‰§è¡Œ
+			throw new RuntimeException("æœªæˆæƒç”¨æˆ·ä¸å…è®¸è°ƒç”¨");			
 		}
 	}
 

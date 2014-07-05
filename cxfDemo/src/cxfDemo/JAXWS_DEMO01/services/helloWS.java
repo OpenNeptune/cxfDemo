@@ -2,21 +2,21 @@ package cxfDemo.JAXWS_DEMO01.services;
 
 /**
  * 
- * @Ê¹ÓÃ×¢½âÊµÏÖJAX-WS
+ * @ä½¿ç”¨æ³¨è§£å®ç°JAX-WS
  */
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
 
-//Ê¹ÓÃ@WebService×¢½âÉùÃ÷¸ÃÀàÊÇÒ»¸öSEI(web services·şÎñÆ÷½Ó¿Ú)
+//ä½¿ç”¨@WebServiceæ³¨è§£å£°æ˜è¯¥ç±»æ˜¯ä¸€ä¸ªSEI(web servicesæœåŠ¡å™¨æ¥å£)
 @WebService
 public interface helloWS {
 
-	//Ê¹ÓÃ@WebMethodÉùÃ÷Ò»¸öwebservices¶ËµÄ·½·¨
+	//ä½¿ç”¨@WebMethodå£°æ˜ä¸€ä¸ªwebservicesç«¯çš„æ–¹æ³•
 	@WebMethod
 	public String sayHello(
-			//Ê¹ÓÃ@WebParamÖ¸¶¨WSDLÎÄµµÖĞ¸Ä·½·¨µÄµÚÒ»¸ö²ÎÊıÎªname£¬Èô²»Ö¸¶¨ÔòÏÔÊ¾arg0
+			//ä½¿ç”¨@WebParamæŒ‡å®šWSDLæ–‡æ¡£ä¸­æ”¹æ–¹æ³•çš„ç¬¬ä¸€ä¸ªå‚æ•°ä¸ºnameï¼Œè‹¥ä¸æŒ‡å®šåˆ™æ˜¾ç¤ºarg0
 			@WebParam(name="name")
 			String name);
 }

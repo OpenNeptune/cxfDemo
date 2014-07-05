@@ -22,9 +22,9 @@ public class orderWSImpl implements orderWS {
 	@Override
 	public List<order> getOrdersList() {
 		List<order> list = new ArrayList<order>();
-		list.add(new order("01","Å£ÄÌ",10.0));
-		list.add(new order("02","¼¦µ°",10.0));
-		list.add(new order("03","Ãæ°ü",10.0));
+		list.add(new order("01","ç‰›å¥¶",10.0));
+		list.add(new order("02","é¸¡è›‹",10.0));
+		list.add(new order("03","é¢åŒ…",10.0));
 		System.out.println("service say:" + list);
 		return list;
 	}
@@ -38,9 +38,9 @@ public class orderWSImpl implements orderWS {
 	@Override
 	public Map<String, order> getOrdersMap() {
 		Map<String, order> map = new HashMap<String, order>();
-		map.put("01",new order("01","Å£ÄÌ",10.0));
-		map.put("02",new order("02","¼¦µ°",10.0));
-		map.put("03",new order("03","Ãæ°ü",10.0));
+		map.put("01",new order("01","ç‰›å¥¶",10.0));
+		map.put("02",new order("02","é¸¡è›‹",10.0));
+		map.put("03",new order("03","é¢åŒ…",10.0));
 		System.out.println("service say:"+map);
 		return map;
 	}

@@ -1,6 +1,6 @@
 package cxfDemo.JAXWS_DEMO01.client1;
 /**
- * ÕâÖÖµ÷ÓÃ·½Ê½ÓĞĞ©ÎÊÌâ£¬ÔİÊ±¶øÎª²âÊÔ³É¹¦
+ * è¿™ç§è°ƒç”¨æ–¹å¼æœ‰äº›é—®é¢˜ï¼Œæš‚æ—¶è€Œä¸ºæµ‹è¯•æˆåŠŸ
  */
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
@@ -14,18 +14,18 @@ public class jaxwsClient {
 	private static final QName PROT_NAME = new QName("http://services.JAXWS_DEMO01.cxfDemo/","helloWSImplPort");
 	
 	public static void main(String[] args) {
-		//Ê¹ÓÃ·şÎñÃû´´½¨Ò»¸ö·şÎñ
+		//ä½¿ç”¨æœåŠ¡ååˆ›å»ºä¸€ä¸ªæœåŠ¡
 		Service service = Service.create(SERVICE_NAME);
 		
 		String  address ="http://localhost:8888/services/helloWS";
 		
-		//Îª·şÎñÌí¼Ó¶Ë¿Ú
+		//ä¸ºæœåŠ¡æ·»åŠ ç«¯å£
 		service.addPort(PROT_NAME, SOAPBinding.SOAP11HTTP_BINDING, address);
 		
-		//»ñÈ¡·şÎñÀàµÄ¶ÔÏó²¢´¦Àí
+		//è·å–æœåŠ¡ç±»çš„å¯¹è±¡å¹¶å¤„ç†
 		helloWS port = service.getPort(helloWS.class);
 		
-		//µ÷ÓÃÏàÓ¦µÄ·½·¨
+		//è°ƒç”¨ç›¸åº”çš„æ–¹æ³•
 		port.sayHello("JAX-WS client");
 		
 	}

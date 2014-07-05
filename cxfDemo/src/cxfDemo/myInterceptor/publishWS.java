@@ -14,7 +14,7 @@ import cxfDemo.myInterceptor.SEIImpl.MyInterceptorWSImpl;
 /**
  * 
  * @summary:
- * 		·¢²¼webservice£¬²¢Î´ÆäÉèÖÃÒ»¸ö×Ô¶¨ÒåÀ¹½ØÆ÷
+ * 		å‘å¸ƒwebserviceï¼Œå¹¶æœªå…¶è®¾ç½®ä¸€ä¸ªè‡ªå®šä¹‰æ‹¦æˆªå™¨
  */
 public class publishWS {
 	public static void main(String[] args) {
@@ -25,6 +25,6 @@ public class publishWS {
 		List<Interceptor<? extends Message>> inInterceptors = endpointImpl.getInInterceptors();
 		inInterceptors.add(new myInterceptor("admin", "admin"));
 		
-		System.out.println("WebServices·¢²¼³É¹¦!");
+		System.out.println("WebServiceså‘å¸ƒæˆåŠŸ!");
 	}
 }

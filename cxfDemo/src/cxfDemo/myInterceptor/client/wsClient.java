@@ -13,14 +13,14 @@ import cxfDemo.myInterceptor.client.wsdemo.MyInterceptorWSImplService;
 
 /**
  * 
- *	使用wsimport命令生成的客户端调用程序
+ *	浣跨敤wsimport鍛戒护鐢熸垚鐨勫鎴风璋冪敤绋嬪簭
  */
 public class wsClient {
 	public static void main(String[] args) {
 		MyInterceptorWSImplService factory = new MyInterceptorWSImplService();
 		MyInterceptorWS myInterceptorWSImplPort = factory.getMyInterceptorWSImplPort();
 		
-		//添加客户端连接器
+		//娣诲姞瀹㈡埛绔繛鎺ュ櫒
 		Client client = ClientProxy.getClient(myInterceptorWSImplPort);
 		List<Interceptor<? extends Message>> outInterceptors = client.getOutInterceptors();
 		outInterceptors.add(new addUserInfoInterceptor("admin", "admin"));

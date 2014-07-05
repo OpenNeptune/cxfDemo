@@ -5,7 +5,7 @@ import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 
 public class cxfClient {
 	public static void main(String[] args) throws Exception {
-		//×¢Òâ£ºaddress×îºó¼ÇµÃÌí¼Ó?wsdl²»È»»á±¨´í
+		//æ³¨æ„ï¼šaddressæœ€åè®°å¾—æ·»åŠ ?wsdlä¸ç„¶ä¼šæŠ¥é”™
 		String address ="http://localhost:8888/services/helloWS?wsdl";
 		
 		JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();

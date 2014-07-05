@@ -1,7 +1,7 @@
 package cxfDemo.JAXWS_DEMO01.services;
 /**
  * @summary
- * 		SEI的实现类
+ * 		SEI鐨勫疄鐜扮被
  */
 import javax.jws.WebService;
 

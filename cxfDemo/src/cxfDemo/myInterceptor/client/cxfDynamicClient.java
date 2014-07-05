@@ -16,24 +16,24 @@ import cxfDemo.myInterceptor.client.interceptor.addUserInfoInterceptor;
 
 /**
  * @summary:
- * 	Ê¹ÓÃcxfµÄ¶¯Ì¬¿Í»§¶Ëµ÷ÓÃwebservice£¬²¢Ìí¼ÓÀ¹½ØÆ÷ 
+ * 	ä½¿ç”¨cxfçš„åŠ¨æ€å®¢æˆ·ç«¯è°ƒç”¨webserviceï¼Œå¹¶æ·»åŠ æ‹¦æˆªå™¨ 
  *
  */
 public class cxfDynamicClient {
 	public static void main(String[] args) throws Exception {
-		//´Ë´¦µÄ?wsdl²»ÄÜÉÙ
+		//æ­¤å¤„çš„?wsdlä¸èƒ½å°‘
 				String address ="http://localhost:8888/services/spring/myinterceptor/interceptorWS?wsdl";
 				
 				JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
 				
 				Client client = dcf.createClient(address);
 				
-				//Ìí¼ÓÀ¹½ØÆ÷
+				//æ·»åŠ æ‹¦æˆªå™¨
 				List<Interceptor<? extends Message>> outInterceptors = client.getOutInterceptors();
 				outInterceptors.add(new addUserInfoInterceptor("admin", "admin"));
 				
-				//¿Í»§¶Ë·¢Æğµ÷ÓÃ
-				// CXF¶¯Ì¬¿Í»§¶ËÔÚ´¦Àí´ËÎÊÌâÊ±£¬»á±¨No operation was found with the nameµÄÒì³£ 
+				//å®¢æˆ·ç«¯å‘èµ·è°ƒç”¨
+				// CXFåŠ¨æ€å®¢æˆ·ç«¯åœ¨å¤„ç†æ­¤é—®é¢˜æ—¶ï¼Œä¼šæŠ¥No operation was found with the nameçš„å¼‚å¸¸ 
 				String operation="helloWS";
 				Endpoint endpoint = client.getEndpoint();  
 				QName opName = new QName(endpoint.getService().getName().getNamespaceURI(), operation);  

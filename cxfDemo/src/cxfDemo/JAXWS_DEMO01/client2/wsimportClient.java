@@ -6,9 +6,9 @@ import cxfDemo.JAXWS_DEMO01.client2.demo.HelloWSImplService;
 /**
  * 
  * @summary:
- * 		Ê¹ÓÃJDKÖÐwsimportÃüÁîÉú³É¿Í»§¶Ë´úÂë£¬È»ºó±àÐ´µ÷ÓÃÀà
- * @×¢Òâ£º
- * 		´Ë°üÏÂµÄdemo°üÏÂµÄËùÓÐÀà¶¼ÊÇÍ³Ò»ÒÔÏÂÃüÁîÉú³É
+ * 		ä½¿ç”¨JDKä¸­wsimportå‘½ä»¤ç”Ÿæˆå®¢æˆ·ç«¯ä»£ç ï¼Œç„¶åŽç¼–å†™è°ƒç”¨ç±»
+ * @æ³¨æ„ï¼š
+ * 		æ­¤åŒ…ä¸‹çš„demoåŒ…ä¸‹çš„æ‰€æœ‰ç±»éƒ½æ˜¯ç»Ÿä¸€ä»¥ä¸‹å‘½ä»¤ç”Ÿæˆ
  * 	src>wsimport -keep -p cxfDemo.JAXWS_DEMO01.client2.demo http://localhost:8888/services/helloWS?Wsdl
  */
 public class wsimportClient {

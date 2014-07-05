@@ -10,6 +10,6 @@ public class publish {
 		
 		Endpoint.publish(address, new ProjectManagerImple());
 		
-		System.out.println("发布成功");
+		System.out.println("鍙戝竷鎴愬姛");
 	}
 }

@@ -25,7 +25,7 @@ public class addUserInfoInterceptor extends AbstractPhaseInterceptor<SoapMessage
 
 	
 	/**
-	 * ÔÚ·¢ËÍWeb ServicesÇëÇóÇ°Ìí¼ÓSOAPÍ·ÐÅÏ¢ÒÔÍê³ÉÓÃ»§ÑéÖ¤
+	 * åœ¨å‘é€Web Servicesè¯·æ±‚å‰æ·»åŠ SOAPå¤´ä¿¡æ¯ä»¥å®Œæˆç”¨æˆ·éªŒè¯
 	 * 		<envelope>
 	 * 			<head>
 	 * 				<user>
@@ -54,7 +54,7 @@ public class addUserInfoInterceptor extends AbstractPhaseInterceptor<SoapMessage
         user.appendChild(ele_username);
         user.appendChild(ele_password);
         
-        //½«SOAPÍ·ÐÅÏ¢Ìí¼Óµ½SOAPÐÅ·âÖÐ
+        //å°†SOAPå¤´ä¿¡æ¯æ·»åŠ åˆ°SOAPä¿¡å°ä¸­
         Header header = new Header(new QName("user"),user);
         message.getHeaders().add(header);
 	}

@@ -22,7 +22,7 @@ import cxfDemo.Interceptor.SEIImpl.InterceptorTestImpl;
 /**
  * 
  * @summary:
- * 		发布webservice并测试拦截器
+ * 		鍙戝竷webservice骞舵祴璇曟嫤鎴櫒
  */
 public class publishWS {
 	public static void main(String[] args) {
@@ -31,7 +31,7 @@ public class publishWS {
 		Endpoint endpoint = Endpoint.publish(address, new InterceptorTestImpl());
 
 		
-		//为改服务添加日志出和日志入连接器
+		//涓烘敼鏈嶅姟娣诲姞鏃ュ織鍑哄拰鏃ュ織鍏ヨ繛鎺ュ櫒
 		EndpointImpl endpointImpl = (EndpointImpl) endpoint;
 		
 		List<Interceptor<? extends Message>> inInterceptors = endpointImpl.getInInterceptors();
@@ -40,6 +40,6 @@ public class publishWS {
 		List<Interceptor<? extends Message>> outInterceptors = endpointImpl.getOutInterceptors();
 		outInterceptors.add(new LoggingOutInterceptor());
 		
-		System.out.println("WebService 发布成功!");
+		System.out.println("WebService 鍙戝竷鎴愬姛!");
 	}
 }
